@@ -15,6 +15,13 @@ modifier onlyManager(){
         require(msg.sender == Manager);
         _;
 }
+receive() external payable{
+        require(msg.value >=1 ether);
+        participants.push(payable(msg.sender));
+ }
+ function balanceOfcontract()public view onlyManager returns(uint){
+       return address(this).balance;
+ }
 
 
 
