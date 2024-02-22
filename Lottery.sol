@@ -11,5 +11,10 @@ address payable public winner;
 constructor(){
         Manager = msg.sender;
 }
+modifier onlyManager(){
+        require(msg.sender == Manager);
+        _;
+}
+
 
 
