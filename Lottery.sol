@@ -22,6 +22,11 @@ receive() external payable{
  function balanceOfcontract()public view onlyManager returns(uint){
        return address(this).balance;
  }
+ function partLen() public view returns(uint) {
+        return participants.length;
+ }
+     
+
 
 
 
