@@ -25,6 +25,21 @@ receive() external payable{
  function partLen() public view returns(uint) {
         return participants.length;
  }
+function selectWinner()public onlyManager {
+        require(participants.length>=3);
+        rand = uint (keccak256(abi.encodePacked(msg.sender,block.timestamp,rand)));
+        uint index = rand % participants.length;
+ 
+        
+        winner = participants[index];
+        
+        winner.transfer(balanceOfcontract());
+        participants =new address payable[](0);
+        
+
+ }
+
+
      
 
 
