@@ -5,3 +5,11 @@ contract Lottery{
 
 address public Manager;
 address payable[] public participants;
+uint public rand;
+address payable public winner; 
+
+constructor(){
+        Manager = msg.sender;
+}
+
+
